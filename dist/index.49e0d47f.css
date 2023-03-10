@@ -1,0 +1,69 @@
+:root .ebi {
+  --r-main-font: Arial, sans-serif;
+  --r-heading-font: Arial, sans-serif;
+  --r-heading-font-weight: bold;
+  --r-link-color: #2a57a3;
+  --r-main-font-size: 25px;
+  --r-heading1-size: 2em;
+  --r-heading2-size: 1.5em;
+  --r-heading3-size: 1.2em;
+  --r-heading4-size: 1em;
+}
+
+.ebi .slide-background.main-title.present {
+  background-image: linear-gradient(#017c41 65vh, #fff 35vh), radial-gradient(circle at -25vh, #017c41, #017c41 50vh, #017c41aa 50vh 55vh, #0000 55vh 55vh), url("building.5f3403d7.jpg"), url("EBI_logo.72ee0618.png");
+  background-position: 0 0, 50vw 0, 100% 0, 95% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 50vw, auto 65vh, auto 65vh, auto 8vh;
+}
+
+.ebi .main-title {
+  height: 90vh;
+}
+
+.ebi .main-title header {
+  text-align: left;
+  position: relative;
+  top: 10%;
+  left: 0;
+}
+
+.ebi .main-title .presentation-info {
+  text-align: left;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.ebi .main-title header h1, .ebi .main-title header h2 {
+  color: #fff;
+}
+
+.ebi .main-title header img.header {
+  height: 100vh;
+  margin: 0;
+}
+
+.ebi .main-title .presentation-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.ebi section:not(.main-title) {
+  height: 85vh;
+  background-image: linear-gradient(#fff 0 15%, #f2f2f2 15% 90%, #0000 10%), url("EBI_logo.72ee0618.png");
+  background-position: 0 0, 95% 99%;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, auto 8%;
+}
+
+.ebi section:not(.main-title) header {
+  height: 15vh;
+}
+
+.ebi section:not(.main-title) .content {
+  height: 60vh;
+}
+
+/*# sourceMappingURL=index.49e0d47f.css.map */
