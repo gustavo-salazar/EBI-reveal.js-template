@@ -12,10 +12,10 @@ jobs:
           node-version: 16
       - name: 🔧 Install
         run: |
-          npm i
+          npm ci
       - name: 🔧 Build
         run: |
-          npm build
+          npm run build
       - name: 🚀 Deploy Demo
         if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4.3.3
