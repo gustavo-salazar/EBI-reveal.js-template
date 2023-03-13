@@ -15,7 +15,7 @@ jobs:
           npm ci
       - name: 🔧 Build
         run: |
-          npm run build -- --public-url "${{ github.repository.name }}"
+          npm run build -- --public-url "EBI-reveal.js-template"
       - name: 🚀 Deploy Demo
         if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4.3.3
