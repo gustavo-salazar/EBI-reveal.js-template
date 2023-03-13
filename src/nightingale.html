@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script type="module" src="index.js"></script>
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/reveal.js/dist/theme/simple.css"
+    />
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="/node_modules/reveal.js/plugin/highlight/zenburn.css"
+    />
+
+    <link rel="stylesheet" href="ebi-template.css" />
+    <script src="https://cdn.jsdelivr.net/npm/interpro-components@0.8.2/dist/index.min.js"></script>
+  </head>
+  <body>
+    <div class="reveal ebi">
+      <div class="slides">
+        <section class="main-title">
+          <header>
+            <h1>Nightingale</h1>
+            <h2>Web components for biology</h2>
+          </header>
+          <div class="presentation-info">
+            <h3>Gustavo A. Salazar</h3>
+            <h4>Web Developer</h4>
+            <p>Protein Families Team</p>
+          </div>
+        </section>
+        <section>
+          <header>
+            <h1>Intro: The core of web development</h1>
+          </header>
+          <div class="content">
+            <h3>HTML + CSS + JS</h3>
+            <table>
+              <tr>
+                <th style="width: 70%">Code</th>
+                <th>Result</th>
+              </tr>
+              <tr class="fragment">
+                <td>
+                  <h5>HTML</h5>
+                  <pre data-id="code-animation">
+                    <code class="hljs" data-trim >
+                      <div id="example-div">
+                        This is a container block in HTML
+                      </div>
+                    </code>
+                  </pre>
+                </td>
+                <td>
+                  <div>This is a container block in HTML</div>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>
+                  <h5>CSS</h5>
+                  <pre data-id="code-animation">
+                    <code class="hljs" data-trim >
+                      div {
+                        background-color: pink;
+                      }
+                    </code>
+                  </pre>
+                </td>
+                <td>
+                  <div style="background-color: pink">
+                    This is a container block in HTML
+                  </div>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>
+                  <h5>JS</h5>
+                  <pre data-id="code-animation">
+                    <code class="hljs" data-trim >
+                      const theDiv = document.getElementById("example-div");
+                      theDiv.addEventListener("click", () => {
+                        theDiv.innerHTML = "New Text";
+                      });
+                                          
+                    </code>
+                  </pre>
+                </td>
+                <td>
+                  <div id="example-div" style="background-color: pink">
+                    This is a container block in HTML
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </section>
+        <section>
+          <header>
+            <h1>What are Web Components?</h1>
+          </header>
+          <!-- prettier-ignore -->
+          <div class="content" data-markdown>
+            Web Components is a suite of different technologies allowing you to
+            create **reusable custom elements** and utilize them in your web
+            apps.
+
+            ---
+
+            In less technical words, you can now create your own tags.
+          </div>
+        </section>
+        <section>
+          <header>
+            <h1>Web Components Example</h1>
+          </header>
+
+          <div class="content">
+            <div class="fragment">
+              For example, we can use the web component
+              <code>interpro-type</code> by including its JavaScript definition:
+              <pre data-id="code-animation">
+                <code class="hljs" data-trim >
+                  <script src="https://cdn.jsdelivr.net/npm/interpro-components@0.8.2/dist/index.min.js"></script>
+                </code>
+              </pre>
+            </div>
+            <div class="fragment">
+              And later in your HTML you can use the new component:
+              <pre data-id="code-animation">
+                <code class="hljs" data-trim >
+                  <interpro-type type="family" dimension="50px"></interpro-type>
+                  <interpro-type type="repeat" dimension="100px"></interpro-type>
+                  <interpro-type type="domain" dimension="20px"></interpro-type>
+                </code>
+              </pre>
+            </div>
+            <div class="fragment">
+              Which results in:<br />
+              <interpro-type type="family" dimension="50px"></interpro-type>
+              <interpro-type type="repeat" dimension="100px"></interpro-type>
+              <interpro-type type="domain" dimension="20px"></interpro-type>
+            </div>
+          </div>
+        </section>
+        <section>
+          <header>
+            <h1>What is Nightingale?</h1>
+          </header>
+          <div class="content" data-markdown>
+            Nightingale is a library of **re-usable** data visualisation Web
+            Components, which can be used to display **protein sequence
+            features**, variants, interaction data, 3D structure, etc. These
+            components are flexible, allowing you to easily view **multiple data
+            sources** (UniProt, InterPro, your own resource, etc) within the
+            same context.
+          </div>
+          <img src="images/nightingale/nightingale_logo.svg" />
+        </section>
+        <section>
+          <header>
+            <h1>UniProt Protvista</h1>
+          </header>
+          <div class="content" data-markdown>
+            Graphical representation of protein sequence features in the
+            **UniProt** Knowledgebase
+          </div>
+          <img src="images/nightingale/protvista.jpg" />
+        </section>
+        <section>
+          <header>
+            <h1>Nightingale</h1>
+            <h4>Version 1.0 (2018) & 2.0 (2019)</h4>
+          </header>
+          <div class="content">
+            <!-- prettier-ignore -->
+            <div data-markdown>
+              * Similar visual outcome than Protvista
+              * Web components. 
+              * Modular tracks.
+              * Available components:
+                * `protvista-manager`
+                * `protvista-navigation`
+                * `protvista-sequence`
+                * `protvista-track`
+                * `protvista-interpro-track`
+                * `protvista-variation`
+                * `protvista-structure`
+                * `*-data-adapter`
+            </div>
+          </div>
+        </section>
+        <section>
+          <header>
+            <h1>Nightingale</h1>
+            <h4>Version 3.0 (2020)</h4>
+          </header>
+          <div class="content flex-columns">
+            <!-- prettier-ignore -->
+            <div data-markdown>
+              * Performance Improvements
+                * Components
+                * Demo application
+                * Building workflow
+              * CD for demo application
+              * Documentation 
+              * Examples of integration with Vue and React
+            </div>
+            <!-- prettier-ignore -->
+            <div data-markdown>
+              * New Components:
+                * `protvista-coloured-sequence`
+                * `protvista-data-table`
+                * `protvista-links`
+                * `protvista-msa`
+                * `protvista-overlay`
+                * `protvista-saver`
+                * `protvista-zoom-tool`
+                * `textarea-sequence`
+            </div>
+          </div>
+        </section>
+        <section>
+          <header>
+            <h1>Nightingale</h1>
+            <h4>Version 3.8.10 (2022)</h4>
+          </header>
+          <img src="images/nightingale/protvista-uniprot.png" />
+        </section>
+        <section>
+          <header>
+            <h1>Nightingale in InterPro</h1>
+          </header>
+          <iframe
+            data-src="https://www.ebi.ac.uk/interpro/protein/UniProt/P05067/"
+            width="100%"
+            height="80%"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            scrolling="yes"
+          >
+          </iframe>
+          <!-- <img src="images/nightingale/protvista-uniprot.png" /> -->
+        </section>
+        <section>
+          <header>
+            <h1>Nightingale</h1>
+            <h4>Other projects using it</h4>
+          </header>
+          <!-- prettier-ignore -->
+          <div class="content" data-markdown>
+| Project         | Link  |
+|-----------------|:-----:|
+| UniProt         | https://www.uniprot.org/uniprotkb/P05067/feature-viewer |
+| PDBe            | https://www.ebi.ac.uk/pdbe/entry/pdb/1aap/protein/1 |
+| Enzyme Portal   | https://www.ebi.ac.uk/enzymeportal/search/P31153/enzyme |
+| Pharos          | https://pharos.ncats.nih.gov/targets/ULK4#sequence |
+| GlyGen          | https://glygen.org/protVista/P46782 |
+          </div>
+        </section>
+        <section>
+          <header>
+            <h1>Nightingale 4.0</h1>
+            <h4>Major refactor of the library</h4>
+          </header>
+          <!-- prettier-ignore -->
+          <div class="content" data-markdown>
+              * Code migrated to TypeScript.
+              * Using Lit Elements library.
+              * Using storybook for the Demo.
+              * Abstracting common logic in mixins, for example:
+                * `withZoom`
+                * `withDimensions`
+                * `withHighlight`
+            </div>
+          <div
+            style="display: flex; width: 100%; justify-content: space-around"
+          >
+            <img src="images/nightingale/typescript.jpeg" height="150px" />
+            <img src="images/nightingale/lit_logo.svg" height="150px" />
+            <img src="images/nightingale/storybook.png" height="150px" />
+          </div>
+          <!-- </div> -->
+        </section>
+        <section>
+          <header>
+            <h1>Nightingale v4.0</h1>
+          </header>
+          <iframe
+            data-src="https://ebi-webcomponents.github.io/nightingale"
+            width="100%"
+            height="80%"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            scrolling="yes"
+          >
+          </iframe>
+          <!-- <img src="images/nightingale/protvista-uniprot.png" /> -->
+        </section>
+        <section data-background-transition="zoom">
+          <h1>Thanks!</h1>
+
+          <div class="content">
+            <h2>Any questions?</h2>
+            <div class="fragment fade-in-then-out">
+              <iframe
+                src="https://giphy.com/embed/5XRB3Ay93FZw4"
+                width="800"
+                height="440"
+                frameborder="0"
+                class="giphy-embed"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

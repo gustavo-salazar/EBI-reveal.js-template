@@ -2,7 +2,10 @@
   "name": "ebi_template_reveal.js",
   "description": "An EBI template for presentations using Reveal.js",
   "license": "MIT",
-  "source": "src/index.html",
+  "source": [
+    "src/index.html",
+    "src/nightingale.html"
+  ],
   "scripts": {
     "start": "parcel",
     "build": "parcel build"

@@ -68,8 +68,8 @@
   background-image: linear-gradient(
     to bottom,
     white 0,
-    white 12%,
-    #f2f2f2 12%,
+    white 13%,
+    #f2f2f2 13%,
     #f2f2f2 90%,
     transparent 10%
   );
@@ -79,10 +79,29 @@
 }
 
 .ebi section:not(.main-title) header {
-  height: 12%;
+  height: 13%;
+  text-align: left;
+  padding-left: 0.5em;
+}
+.ebi section:not(.main-title) header h1 {
+  margin: 0;
 }
 .ebi section:not(.main-title) .content {
   max-height: 80%;
   text-align: left;
   padding: 1em;
+}
+
+.flex-columns {
+  display: flex;
+}
+.flex-columns {
+  margin-top: 1em;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+img.side {
+  width: 45%;
+  aspect-ratio: 1 / 1;
 }

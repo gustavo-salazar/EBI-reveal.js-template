@@ -7,3 +7,10 @@ let deck = new Reveal({
   hash: true,
 });
 deck.initialize();
+
+deck.on("ready", (event) => {
+  const theDiv = document.getElementById("example-div");
+  theDiv.addEventListener("click", () => {
+    theDiv.innerHTML = "New Text";
+  });
+});
