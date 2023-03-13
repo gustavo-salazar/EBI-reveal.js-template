@@ -11,8 +11,15 @@
   --r-heading4-size: 1em;
 }
 
+/* Opening slide */
 .ebi .slide-background.main-title.present {
-  background-image: linear-gradient(to bottom, #017c41 65vh, white 35vh),
+  background-image: radial-gradient(
+      circle at 0,
+      #01633a,
+      #017c41 80%,
+      transparent
+    ),
+    linear-gradient(to bottom, #017c41 65vh, white 35vh),
     radial-gradient(
       circle at -25vh,
       #017c41,
@@ -23,60 +30,59 @@
       transparent 55vh
     ),
     url("images/building.jpg"), url("images/EBI_logo.png");
-  background-position: left top, 50vw top, right top, 95% 100%;
-  background-size: 50vw, auto 65vh, auto 65vh, auto 8vh;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: left top, left top, 50vw top, right top, 95% 100%;
+  background-size: 60vw 65vh, 51vw, auto 65vh, auto 65vh, auto 8vh;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 }
-.ebi .main-title {
-  height: 90vh;
+
+.ebi .slides .main-title {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
 }
 .ebi .main-title header {
-  position: relative;
-  top: 10%;
-  left: 0;
+  flex-grow: 2;
   text-align: left;
+  padding-top: 1em;
+  height: 60%;
 }
 .ebi .main-title .presentation-info {
-  position: relative;
-  bottom: 0;
-  left: 0;
   text-align: left;
+  flex-grow: 1;
 }
 
 .ebi .main-title header h1,
 .ebi .main-title header h2 {
   color: white;
 }
-.ebi .main-title header img.header {
-  margin: 0;
-  height: 100vh;
-}
 
-.ebi .main-title .presentation-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+/* Other Slides */
+.ebi .slide-background:not(.main-title) {
+  background-image: url("images/EBI_logo.png");
+  background-position: 95% 99%;
+  background-size: auto 8%;
+  background-repeat: no-repeat;
 }
-
-.ebi section:not(.main-title) {
-  height: 85vh;
+.ebi .slides > section:not(.main-title) {
+  height: 100%;
   background-image: linear-gradient(
-      to bottom,
-      white 0,
-      white 15%,
-      #f2f2f2 15%,
-      #f2f2f2 90%,
-      transparent 10%
-    ),
-    url("images/EBI_logo.png");
-  background-position: left top, 95% 99%;
-  background-size: 100%, auto 8%;
-  background-repeat: no-repeat, no-repeat;
+    to bottom,
+    white 0,
+    white 12%,
+    #f2f2f2 12%,
+    #f2f2f2 90%,
+    transparent 10%
+  );
+  background-position: left top;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .ebi section:not(.main-title) header {
-  height: 15vh;
+  height: 12%;
 }
 .ebi section:not(.main-title) .content {
-  height: 60vh;
+  max-height: 80%;
+  text-align: left;
+  padding: 1em;
 }

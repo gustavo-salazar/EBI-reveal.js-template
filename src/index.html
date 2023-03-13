@@ -8,6 +8,12 @@
       rel="stylesheet"
       href="/node_modules/reveal.js/dist/theme/simple.css"
     />
+    <!-- Theme used for syntax highlighting of code -->
+    <link
+      rel="stylesheet"
+      href="/node_modules/reveal.js/plugin/highlight/zenburn.css"
+    />
+
     <link rel="stylesheet" href="ebi-template.css" />
   </head>
   <body>
@@ -28,7 +34,59 @@
           <header>
             <h1>EMBL-EBI template - Reveal.js</h1>
           </header>
-          <div class="content">Slide 2</div>
+          <!-- prettier-ignore -->
+          <div class="content" data-markdown>
+            ### This is an attempt to replicate the EBI template on Reveal.js
+            * Currently the only way to change the background image of the opening slide is to edit the `ebi-template.css`:
+              ```css
+              .ebi .slide-background.main-title.present {
+                ...
+                url("images/building.jpg")
+                ...
+              }
+
+              ```
+            * Happy to receive pull request to improve it at https://github.com/gustavo-salazar/EBI-reveal.js-template
+          </div>
+        </section>
+        <section>
+          <header>
+            <h1>Code for opening slide</h1>
+          </header>
+          <pre
+            data-id="code-animation"
+          ><code class="hljs" data-trim data-line-numbers>
+            <section class="main-title">
+              <header>
+                <h1>EMBL-EBI template</h1>
+                <h2>Placeholder for subtitle</h2>
+              </header>
+              <div class="presentation-info">
+                <h3>Presenter name</h3>
+                <h4>Presenter title</h4>
+                <p>Additional Information</p>
+              </div>
+            </section>
+					</code></pre>
+        </section>
+        <section>
+          <header>
+            <h1>Code for normal slide using markdown</h1>
+          </header>
+          <pre
+            data-id="code-animation"
+          ><code class="hljs" data-trim data-line-numbers>
+            <section>
+              <header>
+                <h1>EMBL-EBI template - Reveal.js</h1>
+              </header>
+              <!-- prettier-ignore -->
+              <div class="content" >
+                ### Title
+                * a list item
+              </div>
+            </section>		
+          </code></pre>
         </section>
       </div>
     </div>
