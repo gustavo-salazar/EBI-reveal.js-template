@@ -24,3 +24,16 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
           clean: true
+      - name: 🚀 Deploy My talks
+        if: github.ref == 'refs/heads/my-talks'
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist/my-talks # The folder the action should deploy.
+      - name: 📟 Building My talks
+        if: github.ref == 'refs/heads/main'
+        run: |
+          gh workflow run publish.yml --ref v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
